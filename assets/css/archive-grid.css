@@ -1,0 +1,168 @@
+.all-posts-wrapper {
+  padding: 0 20px !important;
+}
+
+.pp-posts-wrapper {
+  box-sizing: border-box;
+  display: grid !important;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.pp-content-post {
+  border-radius: 10px;
+  box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.25);
+  grid-column: span 1;
+  margin: 0 auto;
+  max-width: 375px;
+  transition: all 0.3s ease;
+}
+
+.pp-content-grid-post-image {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0px 0px;
+  height: auto;
+  padding: 0px;
+  padding-bottom: 0;
+  max-width: 100%;
+  min-height: 287px;
+}
+
+.pp-content-grid-post-body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+}
+
+.pp-content-grid-post-data {
+  color: #666666;
+  font-family: "Open Sans" !important;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: left;
+  width: 100%;
+}
+
+.category-tag {
+  background: #ffdde2;
+  border-radius: 25px;
+  color: #ff2041;
+  display: inline-block;
+  font-family: "Mulish";
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 0px 10px;
+
+}
+
+.pp-content-grid-post-title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 15px 0;
+  padding: 0;
+}
+
+.pp-content-grid-separator {
+  background: #2460C2;
+  height: 2px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 60px;
+}
+
+.pp-content-grid-post-more-link {
+  color: #2460C2;
+  margin-top: 10px;
+}
+
+.pp-content-grid-post-more-link a {
+  color: #2460C2;
+}
+
+.post-date {
+  color: #666666;
+  font-size: 14px;
+}
+
+.dot-separator {
+  color: #b1b1b1;
+  margin: 0px 5px;
+}
+
+.pp-content-post:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
+}
+
+.pp-content-post a:hover {
+  text-decoration: none;
+}
+
+.card-wrapper,
+.card-wrapper:hover {
+  text-decoration: none;
+}
+
+.filters {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+  margin: 0 auto 30px;
+  padding: 10px;
+}
+
+.filter-input,
+.filter-dropdown {
+  background-color: #fff !important;
+  border: 1px solid #333333 !important;
+  border-radius: 8px;
+  color: #333333;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  padding: 8px 16px !important;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-dropdown {
+  appearance: none;
+  background-image: url("https://nomadicsoftware.com/wp-content/uploads/chevron-down.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-input,
+  .filter-dropdown {
+    width: 100%;
+    /* Full-width on small screens */
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .pp-content-grid-post-body {
+    padding-top: 0 !important;
+  }
+}
