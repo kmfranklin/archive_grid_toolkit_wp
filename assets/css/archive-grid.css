@@ -43,7 +43,7 @@
 
 .pp-content-grid-post-data {
   color: #666666;
-  font-family: "Open Sans" !important;
+  font-family: 'Open Sans' !important;
   font-size: 14px;
   line-height: 25px;
   text-align: left;
@@ -55,13 +55,12 @@
   border-radius: 25px;
   color: #ff2041;
   display: inline-block;
-  font-family: "Mulish";
+  font-family: 'Mulish';
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 5px;
   margin-right: 5px;
   padding: 0px 10px;
-
 }
 
 .pp-content-grid-post-title {
@@ -74,7 +73,7 @@
 }
 
 .pp-content-grid-separator {
-  background: #2460C2;
+  background: #2460c2;
   height: 2px;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -82,12 +81,12 @@
 }
 
 .pp-content-grid-post-more-link {
-  color: #2460C2;
+  color: #2460c2;
   margin-top: 10px;
 }
 
 .pp-content-grid-post-more-link a {
-  color: #2460C2;
+  color: #2460c2;
 }
 
 .post-date {
@@ -141,7 +140,7 @@
 
 .filter-dropdown {
   appearance: none;
-  background-image: url("https://nomadicsoftware.com/wp-content/uploads/chevron-down.png");
+  background-image: url('https://nomadicsoftware.com/wp-content/uploads/chevron-down.png');
   background-position: right 10px center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -157,7 +156,6 @@
   .filter-input,
   .filter-dropdown {
     width: 100%;
-    /* Full-width on small screens */
   }
 }
 
