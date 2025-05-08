@@ -1,0 +1,13 @@
+.agt-accordion .agt-header {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.agt-accordion .agt-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.agt-accordion .agt-body {
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+}

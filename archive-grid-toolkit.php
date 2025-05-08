@@ -42,6 +42,24 @@ function agt_init()
 add_action('plugins_loaded', ['AGT_CPT_Loader', 'init']);
 add_action('plugins_loaded', 'agt_init');
 
+// Enqueue scripts
+add_action('wp_enqueue_scripts', function () {
+  wp_enqueue_script(
+    'agt-accordion',
+    AGT_PLUGIN_URL . 'assets/js/agt-accordion.js',
+    ['jquery'],
+    AGT_VERSION,
+    true
+  );
+
+  wp_enqueue_style(
+    'agt-accordion-css',
+    AGT_PLUGIN_URL . 'assets/css/agt-accordion.css',
+    [],
+    AGT_VERSION
+  );
+});
+
 // Register and flush CPTs on activation
 register_activation_hook(
   __FILE__,
