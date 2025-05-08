@@ -18,8 +18,9 @@ define('AGT_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('AGT_VERSION', '2.0.0');
 
 // Autoload classes
+require_once AGT_PLUGIN_DIR . 'includes/class-agt-cpt.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-settings.php';
-require_once AGT_PLUGIN_DIR . 'includes/class-agt-grid';
+require_once AGT_PLUGIN_DIR . 'includes/class-agt-grid.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-ajax.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-shortcodes.php';
 
@@ -28,6 +29,7 @@ require_once AGT_PLUGIN_DIR . 'includes/class-agt-shortcodes.php';
  */
 function agt_init()
 {
+  AGT_CPT::get_instance();
   AGT_Settings::get_instance();
   AGT_Grid::get_instance();
   AGT_Ajax::get_instance();
