@@ -17,8 +17,12 @@ define('AGT_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AGT_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('AGT_VERSION', '2.0.0');
 
-// Autoload classes
-require_once AGT_PLUGIN_DIR . 'includes/class-agt-cpt.php';
+// Load classes
+require_once AGT_PLUGIN_DIR . 'includes/cpt/class-agt-cpt-loader.php';
+require_once AGT_PLUGIN_DIR . 'includes/cpt/class-agt-cpt-resources.php';
+require_once AGT_PLUGIN_DIR . 'includes/cpt/class-agt-cpt-faq.php';
+
+// Load modules
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-settings.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-grid.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-ajax.php';
@@ -29,11 +33,21 @@ require_once AGT_PLUGIN_DIR . 'includes/class-agt-shortcodes.php';
  */
 function agt_init()
 {
-  AGT_CPT::get_instance();
   AGT_Settings::get_instance();
   AGT_Grid::get_instance();
   AGT_Ajax::get_instance();
   AGT_Shortcodes::get_instance();
 }
 
+add_action('plugins_loaded', ['AGT_CPT_Loader', 'init']);
 add_action('plugins_loaded', 'agt_init');
+
+// Register and flush CPTs on activation
+register_activation_hook(
+  __FILE__,
+  function () {
+    AGT_CPT_Resource::get_instance()->register_resource_cpt();
+    AGT_CPT_FAQ::get_instance()->register_faq_cpt();
+    flush_rewrite_rules();
+  }
+);

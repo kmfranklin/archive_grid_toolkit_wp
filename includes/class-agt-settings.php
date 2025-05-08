@@ -83,7 +83,6 @@ class AGT_Settings
 
   private $configs;
 
-  /** Singleton instance */
   public static function get_instance()
   {
     if (! self::$instance) {
