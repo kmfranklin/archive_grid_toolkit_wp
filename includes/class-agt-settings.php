@@ -85,10 +85,18 @@ class AGT_Settings
     ],
   ];
 
-  /** Merged user configs */
   private $configs;
 
-  /** Singleton getter */
+  /**
+   * Return the merged settings array.
+   * 
+   * @return array
+   */
+  public function get_configs(): array
+  {
+    return $this->configs;
+  }
+
   public static function get_instance()
   {
     if (! self::$instance) {
@@ -283,7 +291,7 @@ class AGT_Settings
           case 'lazy_load':
           case 'multi_open':
           case 'expand_first':
-            $clean[$id][$f] = !empty($v);
+            $clean[$id][$f] = isset($raw[$f]) && (bool) $raw[$f];
             break;
           case 'container_class':
           case 'search_placeholder':
