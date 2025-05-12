@@ -236,9 +236,12 @@ class AGT_Settings
   public function sanitize_configs($input)
   {
     $clean = [];
+
     foreach ($this->defaults as $id => $def) {
-      $raw = $input[$id] ?? [];
+      $raw   = $input[$id] ?? [];
       $clean[$id] = [];
+
+      // always‑present fields
       $fields = [
         'posts_per_page',
         'sort_by',
@@ -257,12 +260,17 @@ class AGT_Settings
         'filter_taxonomies',
         'transient_duration',
         'lazy_load',
-        'multi_open',
-        'expand_first',
-        'animation_speed'
       ];
+
+      // FAQ only
+      if ('faq' === $id) {
+        $fields[] = 'multi_open';
+        $fields[] = 'expand_first';
+        $fields[] = 'animation_speed';
+      }
+
       foreach ($fields as $f) {
-        $v = $raw[$f] ?? $def[$f];
+        $v = $raw[$f] ?? ($def[$f] ?? null);
         switch ($f) {
           case 'posts_per_page':
           case 'excerpt_length':

@@ -25,7 +25,6 @@ require_once AGT_PLUGIN_DIR . 'includes/cpt/class-agt-cpt-faq.php';
 // Load modules
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-settings.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-grid.php';
-require_once AGT_PLUGIN_DIR . 'includes/class-agt-ajax.php';
 require_once AGT_PLUGIN_DIR . 'includes/class-agt-shortcodes.php';
 
 /**
@@ -35,7 +34,6 @@ function agt_init()
 {
   AGT_Settings::get_instance();
   AGT_Grid::get_instance();
-  AGT_Ajax::get_instance();
   AGT_Shortcodes::get_instance();
 }
 
